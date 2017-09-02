@@ -1,0 +1,23 @@
+"*":
+  "autocomplete-plus":
+    fileBlacklist: [
+      ".*"
+      "*.md"
+      "*.txt"
+    ]
+  "autocomplete-python":
+    useKite: false
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "09c9d71f-6f65-4763-aaee-731798e77e85"
+  "seti-ui": {}
+  welcome:
+    showOnStartup: false
