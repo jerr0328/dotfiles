@@ -1,5 +1,5 @@
 set nocompatible " Improved mode, req'd
-set shell=/bin/sh
+set shell=/bin/bash
 filetype on " for some unknown reason vim returns 1 with ft off first...
 filetype off " vundle req'd
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -156,4 +156,3 @@ if has('persistent_undo')
 endif
 
 au FileType ruby setl sw=2 sts=2 et
-
