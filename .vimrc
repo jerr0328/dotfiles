@@ -44,7 +44,7 @@ Plugin 'wellle/targets.vim'
 " vim pad :Pad
 Plugin 'fmoralesc/vim-pad'
 " devicons
-" Plugin 'ryanoasis/vim-devicons'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 
 filetype plugin indent on
