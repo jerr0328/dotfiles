@@ -23,6 +23,16 @@ git config --global core.excludesfile ~/.gitignore
 
 Be sure to install Atom and then replace the config.cson with the one in the .atom directory here.
 
+To install packages, run
+```
+apm install --packages-file .atom/package.list
+```
+
+To re-generate the package list, run:
+```
+apm list --installed --bare > .atom/package.list
+```
+
 ## Fish/Fisherman
 
 Most of the fish configuration is done via installing plugins with [Fisherman](https://github.com/fisherman/fisherman). The fishfile is useful for this. Note that you shouldn't simply symlink the whole .config/fish directory, as there's a lot of stuff that shouldn't go into version control

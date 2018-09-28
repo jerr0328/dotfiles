@@ -1,23 +1,74 @@
-"*":
-  "autocomplete-plus":
-    fileBlacklist: [
-      ".*"
-      "*.md"
-      "*.txt"
-    ]
-  "autocomplete-python":
-    useKite: false
-  core:
-    telemetryConsent: "limited"
-    themes: [
-      "seti-ui"
-      "seti-syntax"
-    ]
-  editor:
-    showIndentGuide: true
-    showInvisibles: true
-  "exception-reporting":
-    userId: "09c9d71f-6f65-4763-aaee-731798e77e85"
-  "seti-ui": {}
-  welcome:
-    showOnStartup: false
+{
+  "*": {
+    "autocomplete-plus": {
+      "fileBlacklist": [
+        ".*",
+        "*.md",
+        "*.txt"
+      ]
+    },
+    "autocomplete-python": {
+      "useKite": false
+    },
+    "core": {
+      "disabledPackages": [
+        "language-gfm",
+        "markdown-preview",
+        "trailing-spaces"
+      ],
+      "projectHome": "/Users/jeremymayeres/source",
+      "telemetryConsent": "limited",
+      "themes": [
+        "seti-ui",
+        "seti-syntax"
+      ]
+    },
+    "editor": {
+      "showIndentGuide": true,
+      "showInvisibles": true
+    },
+    "exception-reporting": {
+      "userId": "2fdb3ce0-e58e-1971-9319-0ef382acc502"
+    },
+    "linter": {},
+    "linter-flake8": {
+      "executablePath": "/usr/local/bin/flake8"
+    },
+    "markdown-preview-enhanced": {
+      "frontMatterRenderingOption": "none",
+      "previewTheme": "monokai.css"
+    },
+    "markdown-preview-plus": {
+      "enablePandoc": true,
+      "pandocMarkdownFlavor": "markdown-raw_tex+tex_math_single_backslash+yaml_metadata_block",
+      "pandocPath": "/usr/local/bin/pandoc"
+    },
+    "spell-check": {
+      "addKnownWords": true,
+      "grammars": [
+        "source.asciidoc",
+        "source.gfm",
+        "text.git-commit",
+        "text.plain",
+        "text.plain.null-grammar",
+        "text.md"
+      ]
+    },
+    "tree-view": {
+      "hideVcsIgnoredFiles": true
+    },
+    "welcome": {
+      "showOnStartup": false
+    }
+  },
+  ".md.text": {
+    "whitespace": {
+      "removeTrailingWhitespace": false
+    }
+  },
+  ".shell.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  }
+}
