@@ -36640,9 +36640,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 906 620 392 0 0 2560 1600 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>3029 707 796 473 2560 165 1680 1050 </string>
+	<string>632 566 796 486 0 0 2560 1600 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2560 761 650 427 2560 165 1680 1050 </string>
+	<string>0 0 1674 1019 0 0 2560 1577 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>727 548 650 427 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -37273,7 +37273,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -37431,7 +37431,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-01T20:21:00Z</date>
+	<date>2018-09-28T08:23:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyle</key>
@@ -40547,7 +40547,9 @@
 			</dict>
 		</array>
 	</dict>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.7</string>
+	<string>3.2.1</string>
 </dict>
 </plist>
