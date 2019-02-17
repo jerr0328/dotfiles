@@ -15,9 +15,6 @@
       "language-gfm"
       "markdown-preview"
       "trailing-spaces"
-      "linter"
-      "autocomplete-python"
-      "linter-flake8"
       "language-python"
     ]
     projectHome: "/Users/jeremy/source"
@@ -30,6 +27,8 @@
     preferredLineLength: 88
     showIndentGuide: true
     showInvisibles: true
+  "exception-reporting":
+    userId: "470136e3-1991-49d3-ad94-8b83fc339484"
   "ide-python":
     pylsPlugins:
       autopep8:

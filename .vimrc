@@ -156,3 +156,5 @@ if has('persistent_undo')
 endif
 
 au FileType ruby setl sw=2 sts=2 et
+" DVC
+autocmd! BufNewFile,BufRead Dvcfile,*.dvc setfiletype yaml
