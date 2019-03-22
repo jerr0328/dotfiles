@@ -1,50 +1,33 @@
 set nocompatible " Improved mode, req'd
+
 set shell=/bin/bash
 filetype on " for some unknown reason vim returns 1 with ft off first...
 filetype off " vundle req'd
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-" let vundle manage intself
-Plugin 'VundleVim/Vundle.vim'
-" Airline for fun statusline
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" file browser plz
-Plugin 'ctrlpvim/ctrlp.vim'
-" hybrid same as vim-hybrid[line]
+Plugin 'VundleVim/Vundle.vim' " Let vundle manage itself
+Plugin 'tpope/vim-sensible' " Good defaults
+Plugin 'itchyny/lightline.vim'
+Plugin 'ctrlpvim/ctrlp.vim' " Jay's favorite file searcher
 Plugin 'tpope/vim-surround'
-" abolish... magic. case preserving replacement and magic.
-Plugin 'tpope/vim-abolish'
-" auto ({[ completions
-Plugin 'jiangmiao/auto-pairs'
-" vim-fish syntax
-Plugin 'dag/vim-fish'
-" vim-json syntax highlight
-Plugin 'elzr/vim-json'
-" vim indent guides
+Plugin 'tpope/vim-abolish' " case preserving :S/foo/bar/g
+Plugin 'jiangmiao/auto-pairs' " auto ({[ completions
+Plugin 'dag/vim-fish' " vim-fish syntax
 Plugin 'nathanaelkane/vim-indent-guides'
-" css colors highlight
 Plugin 'ap/vim-css-color'
-" ansible-vim syntax
 Plugin 'pearofducks/ansible-vim'
-" Base16 vim
-Plugin 'chriskempson/base16-vim'
-" proper vim indent for pep8
+Plugin 'danielwe/base16-vim'
 Plugin 'hynek/vim-python-pep8-indent'
-" flake8 pep8 style checker
 Plugin 'nvie/vim-flake8'
-" tmuxline
+Plugin 'vim-syntastic/syntastic'
 Plugin 'edkolev/tmuxline.vim'
-" tagbar -- class outline viewer
 Plugin 'majutsushi/tagbar'
-" comments with gc
-Plugin 'tomtom/tcomment_vim'
-" same indent level e.g. <ii, good for python
+Plugin 'tomtom/tcomment_vim' " comments with gc
 Plugin 'wellle/targets.vim'
-" vim pad :Pad
 Plugin 'fmoralesc/vim-pad'
-" devicons
 Plugin 'ryanoasis/vim-devicons'
+" Plugin 'dracula/vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -53,8 +36,13 @@ set background=dark " needed by colorscheme
 
 colorscheme base16-monokai
 
-syntax on
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+" for now we need this until hyper again supports truecolor
 set hidden
+
+"syntax on
 
 set clipboard=unnamed
 set tabstop=4
@@ -87,18 +75,9 @@ set smartcase " except when we want it!
 " turn off search hl
 nnoremap <C-L> :nohl<CR><C-L>
 
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-let g:airline_symbols.maxlinenr = ""
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16_monokai'
-
 " use nearest .git as cwd
 let g_ctrlp_working_path_mode = 'r'
-let g:ctrlp_user_command = 'rg --files %s'
+let g:ctrlp_user_command = 'rg --files %s --hidden'
 
 nnoremap <silent><F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>``
 
@@ -115,15 +94,11 @@ set pastetoggle=<F3>
 "nnoremap <SPACE> za
 
 " mappings!
-nmap \[ :bnext<CR>
-nmap \] :bprev<CR>
 vnoremap > >gv
 vnoremap < <gv
 nmap j gj
 nmap k gk
-inoremap \\ <ESC>
 nmap <LEADER>l :set list!<CR>
-map Y y$
 
 " cool! highlight last chars in insert mode :D
 nnoremap gV `[v`]
@@ -144,6 +119,18 @@ autocmd InsertLeave * :set relativenumber
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
 
+let g:syntastic_python_checkers = ['flake8', 'python']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:jsonnet_fmt_options = '-n 4'
+let g:tcommentTextObjectInlinecomment = 'tc'
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
     let myUndoDir = expand(vimDir . '/undodir')
@@ -155,6 +142,7 @@ if has('persistent_undo')
     set undofile
 endif
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 au FileType ruby setl sw=2 sts=2 et
 " DVC
 autocmd! BufNewFile,BufRead Dvcfile,*.dvc setfiletype yaml

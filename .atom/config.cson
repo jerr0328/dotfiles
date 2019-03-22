@@ -1,7 +1,7 @@
 "*":
   "atom-ide-ui":
     "atom-ide-code-format":
-      formatOnSave: true
+      formatOnSave: false
   "autocomplete-plus":
     fileBlacklist: [
       ".*"
@@ -62,8 +62,7 @@
       "text.plain.null-grammar"
       "text.md"
     ]
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
 ".md.text":
