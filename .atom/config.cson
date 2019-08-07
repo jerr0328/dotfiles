@@ -24,6 +24,7 @@
       "wombat-dark-syntax"
     ]
   editor:
+    fontFamily: "Fira Code, Menlo, Consolas, DejaVu Sans Mono, monospace"
     preferredLineLength: 88
     showIndentGuide: true
     showInvisibles: true
@@ -50,6 +51,9 @@
     enablePandoc: true
     pandocMarkdownFlavor: "markdown-raw_tex+tex_math_single_backslash+yaml_metadata_block"
     pandocPath: "/usr/local/bin/pandoc"
+  "python-black":
+    binPath: "/Users/jeremy/.pyenv/versions/arch-3.6/bin/black"
+    fmtOnSave: false
   "seti-ui":
     compactView: true
   "spell-check":
