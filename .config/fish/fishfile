@@ -5,3 +5,4 @@ barnybug/docker-fish-completion
 aliz-ai/google-cloud-sdk-fish-completion
 daenney/pyenv
 matchai/spacefish
+jorgebucaran/fish-nvm
