@@ -4,4 +4,5 @@ oh-my-fish/plugin-thefuck
 barnybug/docker-fish-completion
 aliz-ai/google-cloud-sdk-fish-completion
 daenney/pyenv
-matchai/spacefish
+oh-my-fish/plugin-aws
+jorgebucaran/fish-nvm
