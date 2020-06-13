@@ -18,20 +18,9 @@ The .gitignore in this directory should be used for the global gitignore
 git config --global core.excludesfile ~/.gitignore
 ```
 
+## bin
 
-## Atom
-
-Be sure to install Atom and then replace the config.cson with the one in the .atom directory here.
-
-To install packages, run
-```
-apm install --packages-file .atom/package.list
-```
-
-To re-generate the package list, run:
-```
-apm list --installed --bare > .atom/package.list
-```
+Symlink the files in `bin` in `~/bin`. The fish config sets that in the PATH variable.
 
 ## VSCode
 
