@@ -4,3 +4,4 @@ git checkout main
 git pull
 git remote prune origin
 git clean-stale-local
+git delete-squashed

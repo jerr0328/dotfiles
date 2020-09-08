@@ -9,4 +9,11 @@ disabled = false
 [python]
 pyenv_prefix = ""
 pyenv_version_name = true
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[ruby]
+symbol = " "
 

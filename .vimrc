@@ -34,7 +34,7 @@ filetype plugin indent on
 let base16colorspace=256
 set background=dark " needed by colorscheme
 
-colorscheme base16-monokai
+colorscheme base16-onedark
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',

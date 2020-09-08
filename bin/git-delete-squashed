@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+MAIN_BRANCH=main
+
+# Adapted from https://stackoverflow.com/a/56026209/375530
+git checkout -q $MAIN_BRANCH
+git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do
+    mergeBase=$(git merge-base ${MAIN_BRANCH} $branch)
+    if [[ $(git cherry $MAIN_BRANCH $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]]; then
+        git branch -D $branch
+    fi
+done
