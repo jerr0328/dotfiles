@@ -31,10 +31,11 @@ Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 
 filetype plugin indent on
-let base16colorspace=256
-set background=dark " needed by colorscheme
 
-colorscheme base16-onedark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',

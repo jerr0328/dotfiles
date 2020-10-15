@@ -1,4 +1,5 @@
 # Base16 Shell
 if status --is-interactive
-    eval sh $HOME/.config/base16-shell/scripts/base16-onedark.sh
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
 end
