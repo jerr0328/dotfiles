@@ -1,10 +1,27 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
-prompt_order = ["time", "username", "directory", "hostname", "git_branch", "git_state", "git_status", "ruby", "python", "cmd_duration", "line_break", "jobs", "character"]
+# prompt_order = ["time", "username", "directory", "hostname", "git_branch", "git_state", "git_status", "ruby", "python", "cmd_duration", "line_break", "jobs", "character"]
+format = """\
+    $time\
+    $username\
+    $directory\
+    $hostname\
+    $git_branch\
+    $git_state\
+    $git_status\
+    $ruby\
+    $python\
+    $cmd_duration\
+    $line_break\
+    $jobs\
+    $character\
+    """
+
 
 [time]
 disabled = false
+format = "[$time]($style) "
 
 [python]
 pyenv_prefix = ""
