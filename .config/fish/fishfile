@@ -7,3 +7,4 @@ daenney/pyenv
 oh-my-fish/plugin-aws
 jorgebucaran/fish-nvm
 rbenv/fish-rbenv
+danhper/fish-ssh-agent
