@@ -2,7 +2,36 @@
 
 set -euo pipefail
 
-MAIN_BRANCH=main
+# From git-clean-stale-local:
+# Determines the default ("central") branch.  Not necessarily `master`.
+# Based on the origin's HEAD (default) branch.  If not cached locally (which
+# happens when we're the original pusher from this local repo), get it remotely
+# and cache the remote ref on-the-fly.
+#
+# If no `origin/HEAD` can be determined, exit the script with exit code
+# `EX_UNAVAILABLE` (69) and a proper error message on STDERR.
+#
+# Otherwise just display the short branch name (this function should be called within
+# output capture, e.g. `$(getDefaultBranch)`).
+function getDefaultBranch()
+{
+  local cachedPath="$(git rev-parse --git-dir)/refs/remotes/origin/HEAD"
+  if [ -f "$cachedPath" ]; then
+    sed -n 's@ref: refs/remotes/origin/@@p' "$cachedPath"
+    return
+  fi
+  local ref=$(git ls-remote --symref origin HEAD | sed -n 's@ref: refs/heads/@@p' | cut -f1)
+  if [ $? -eq 0 ]; then
+    echo "ref: refs/remotes/origin/$ref" > "$cachedPath"
+    echo $ref
+    return
+  fi
+  echo "Cannot determine default branch: no readable origin/HEAD anywhere." >&2
+  exit 69 # EX_UNAVAILABLE
+}
+
+
+MAIN_BRANCH=$(getDefaultBranch)
 
 # Adapted from https://stackoverflow.com/a/56026209/375530
 git checkout -q $MAIN_BRANCH
