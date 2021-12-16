@@ -2,5 +2,6 @@
 .python-local
 .python-version
 .DS_Store
-.vscode
 .venv
+.vscode
+

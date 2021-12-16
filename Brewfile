@@ -87,17 +87,13 @@ cask "doxie"
 cask "eid-be"
 cask "eid-be-viewer"
 cask "firefox"
-cask "font-dejavu-sans"
-cask "font-fira-code"
-cask "font-firacode-nerd-font"
-cask "font-robotomono-nerd-font-mono"
+cask "font-fira-code-nerd-font"
 cask "gcc-arm-embedded"
 cask "google-cloud-sdk"
 cask "gpg-suite"
 cask "hex-fiend"
 cask "iterm2"
 cask "ithoughtsx"
-cask "java"
 cask "meld"
 cask "monitorcontrol"
 cask "ngrok"
@@ -124,4 +120,3 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "WhatsApp", id: 1147396723
-mas "Xcode", id: 497799835
