@@ -1,7 +1,5 @@
 #!/bin/bash
 set -e
-git checkout main 
+git switch main
 git pull
-git remote prune origin
-git clean-stale-local
 git delete-squashed
