@@ -22,13 +22,6 @@ git config --global core.excludesfile ~/.gitignore
 
 Symlink the files in `bin` in `~/bin`. The fish config sets that in the PATH variable.
 
-## VSCode
-
-```
-cd $HOME/Library/Application\ Support/Code/User/
-ln -s ~/source/dotfile/vscode/settings.json
-```
-
 ## Fish/Fisherman
 
 Most of the fish configuration is done via installing plugins with [Fisherman](https://github.com/fisherman/fisherman). The fishfile is useful for this. Note that you shouldn't simply symlink the whole .config/fish directory, as there's a lot of stuff that shouldn't go into version control
