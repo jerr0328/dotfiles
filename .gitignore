@@ -3,5 +3,5 @@
 .python-version
 .DS_Store
 .venv
-.vscode
+# .vscode
 
